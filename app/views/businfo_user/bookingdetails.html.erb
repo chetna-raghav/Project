@@ -1,0 +1,10 @@
+<div class="container">
+ <h1><div class="text-success">Your booking is Confirmed</div></h1>
+ <div >
+ <div class="text-primary">From : <%= @businfo.Source %></div>
+  <div class="text-primary">To : <%= @businfo.Destination %></div>
+   <div class="text-primary">On : <%= @businfo.Date.to_s %> <%= @businfo.Time.to_s %></div>
+    <div class="text-primary">Bus Number : <%= @businfo.Bus_Number.to_s %></div>
+	 <div class="text-primary">Bus Name : <%= @businfo.Bus_Name %></div>
+</div>
+</div>

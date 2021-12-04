@@ -1,0 +1,61 @@
+<h2>Add a Bus</h2>
+   <%= form_with model: [@busowner,@busowner.businfos.build ] do |form| %>
+    
+    
+  
+    <div class="mb mb-3">
+      <% form.label :Bus_Number %>
+      <%= form.number_field :Bus_Number ,class:"form-control",placeholder:"Bus Number" %>
+    </div>
+  
+    <div class="mb mb-3">
+      <% form.label :Bus_Name %>
+      <%= form.text_field :Bus_Name,class:"form-control",placeholder:"Bus Name" %>
+    </div>
+  
+    <div class="mb mb-3">
+      <% form.label :Source %>
+      <%= form.text_field :Source ,class:"form-control",placeholder:"Source"%>
+    </div>
+  
+    <div class="mb mb-3">
+      <% form.label :Destination %>
+      <%= form.text_field :Destination,class:"form-control" ,placeholder:"Destination"%>
+    </div>
+  
+    <div class="mb mb-3">
+      <% form.label :Number_Of_Seats %>
+      <%= form.number_field :Number_Of_Seats,class:"form-control",placeholder:"Number Of Seats" %>
+    </div>
+  
+    <div class="mb mb-3">
+      <% form.label :Availableseats %>
+      <%= form.number_field :Availableseats,class:"form-control",placeholder:"Available Seats" %>
+    </div>
+  
+    <div class="mb mb-3">
+      <% form.label :Price %>
+      <%= form.number_field :Price,class:"form-control",placeholder:"Price" %>
+    </div>
+  
+    <div class="mb mb-3">
+      <%= form.label :Date %>
+      <%= form.date_select :Date,class:"form-control",placeholder:"Date" %>
+    </div>
+  
+    <div class="mb mb-3">
+      <%= form.label :Time %>
+      <%= form.time_select :Time,class:"form-control",placeholder:"Time" %>
+    </div>
+  
+    <div class="mb mb-3">
+      <% form.label :Time_taken %>
+      <%= form.number_field :Time_taken,class:"form-control",placeholder:"Time Taken" %>
+    </div>
+   
+    
+        <div class="mb-3">
+        <%= form.submit "Add Bus ", class: "btn btn-primary" %>
+      </div>
+  <% end %>
+  

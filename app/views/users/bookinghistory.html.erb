@@ -1,0 +1,40 @@
+<div class ="container container border .w-70 shadow-lg p-3 mb-5 bg-white rounded mt-5">
+  <h1>Booking History</h1>
+  <% @businfousers.each do |businfouser| %>
+   <table class="table table-striped table-bordered table-hover">
+     <thead class="thead-dark">
+      <tr>
+      <th>Bus number</th>
+      <th>Bus name</th>
+      <th>Source</th>
+      <th>Destination</th>
+      <th>Price</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Time taken</th>
+      <th colspan="3"></th>
+    </tr>
+   </thead>
+   <tbody>
+
+        <% @businfos.each do |businfo| %>
+            <%if businfouser.businfo_id == businfo.id %>
+              <tr>
+                <td><%= businfo.Bus_Number %></td>
+                <td><%= businfo.Bus_Name %></td>
+                <td><%= businfo.Source %></td>
+                <td><%= businfo.Destination %></td>
+                <td><%= businfo.Price %></td>
+                <td><%= businfo.Date %></td>
+                <td><%= businfo.Time %></td>
+                <td><%= businfo.Time_taken %></td>
+
+              <td><%= link_to "Cancel",cancelbooking_path(@user,businfouser,businfo),data: {confirm: "Are you sure to cancel this booking?" }, class: "btn btn-primary"%></td>
+              </tr>
+            <%end%>
+        <% end %>
+  </tbody>
+ </table>
+ <% end %>
+
+</div>

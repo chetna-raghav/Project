@@ -1,0 +1,40 @@
+</br></br></br>
+<%= stylesheet_link_tag 'stylesheetabout', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class =" animate__animated animate__jackInTheBox container container border .w-70 shadow-lg p-3 mb-5 bg-white rounded">
+ <h1 class="   animate__animated animate__jackInTheBox">Sign Up Form</h1>
+ <%=form_with model: @busowner,url: busowners_busownersignup_path do |form| %>
+    
+  <%if @busowner.errors.any? %>
+    <div class="alert alert-danger">
+    <% @busowner.errors.full_messages.each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+     </div>
+   <%end%>  
+
+
+  <div class="mb-3">
+    <%= form.label :email %><br>
+    <%= form.text_field :email, class: "form-control",placeholder: "steve@apple.com" %>
+  </div>
+
+  <div class="mb-3"> 
+    <%= form.label :password %><br>
+    <%= form.password_field :password,class: "form-control",placeholder: "password" %>
+  </div> 
+  
+  <div class="mb-3"> 
+  <%= form.label :password_confirmation %><br>
+  <%= form.password_field :password_confirmation,class: "form-control",placeholder: "password" %>
+   </div>
+
+  <div class="mb-3">
+    <%= form.submit "Create Bus Owner", class: "btn btn-primary" %>
+  </div>
+
+  <div class="mb-3 animate__animated animate__jackInTheBox">
+  <%= link_to  "Back", root_path, class: "btn btn-primary " %>
+   </div>
+
+  <% end %>
+</div>

@@ -1,0 +1,9 @@
+<div class="container">
+ <h1>Booking Confirmed</h1>
+ <h2> User Details</h2>
+ <h3>User Email:<%=@user.email %></h3>
+ <h4>Bus Name:<%=@businfo.Bus_Name %></h4>
+ <h4>Bus Number:<%=@businfo.Bus_Number %></h4>
+ <%=link_to "Home-Page",user_path(@user),class:"btn btn-primary"%>
+ <%=link_to "Log-Out",users_userlogin_path,class:"btn btn-primary"%>
+</div>

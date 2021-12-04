@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+  <%= link_to "Navbar",root_path,class:"navbar-brand" %>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+		    <%= link_to "Home",root_path,class:"nav-link active" %>
+          
+        </li>
+        <li class="nav-item">
+		<%= link_to "About",users_about_path,class:"nav-link" %>
+        </li> 
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <% if Current.user or Current.owner %>
+
+            <% if Current.user %>
+
+        <li class="nav-item">
+         <span class="navbar-text m-5 text-white">User Logged in as:&nbsp; <%= Current.user.name%></span>
+         </li>
+
+            <li class="nav-item">
+        <%= link_to "Bus Equiry",searchbus_path(Current.user),class:"nav-link" %>
+        </li>
+
+        <li class="nav-item">
+        <%= link_to "Booking History",bookinghistory_path(Current.user),class:"nav-link" %>
+        </li>
+
+         
+            <li class="nav-item">
+            <%= button_to "Logout", userlogout_path, method: :delete,class:"btn btn-sm btn-outline-secondary" %>
+            </li>
+
+            <% end %>
+            <% if Current.owner %>
+        
+        <li class="nav-item">
+         <span class="navbar-text m-5 text-white">Owner Logged in as: <%= Current.owner.email%>&nbsp; </span>
+         </li>
+
+          <li class="nav-item">
+        <%= link_to "Bus List", busowner_path(Current.owner),class:"nav-link" %>
+        </li>
+
+
+          
+             <li class="nav-item">
+             <%= button_to "Logout", ownerlogout_path, method: :delete,class:"btn btn-sm btn-outline-secondary" %>
+            </li>
+
+            
+
+
+            <% end %>
+
+      <% else %>
+
+              <li class="nav-item">
+        <%= link_to "User Login",users_userlogin_path,class:"nav-link" %>
+        </li>
+
+        <li class="nav-item">
+        <%= link_to "User SignUp",users_usersignup_path,class:"nav-link" %>
+        </li>
+
+        <li class="nav-item">
+        <%= link_to "Bus Owner Login",busowners_busownerlogin_path,class:"nav-link" %>
+        </li>
+
+        <li class="nav-item">
+        <%= link_to "Bus Owner SignUp",busowners_busownersignup_path,class:"nav-link" %>
+        </li>
+
+      <% end %>
+     
+      </ul>         
+        
+    </div>
+  </div>
+</nav>

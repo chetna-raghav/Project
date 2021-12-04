@@ -1,0 +1,27 @@
+
+#FOR EXISTING USERS
+<%= stylesheet_link_tag 'stylesheetabout', media: 'all', 'data-turbolinks-track': 'reload' %>
+</br></br></br>
+<div class ="animate__animated animate__jackInTheBox container container border .w-70 shadow-lg p-3 mb-5 bg-white rounded">
+<h1>Login Form</h1>
+<%=form_with model: @user,url: users_userlogin_path do |form| %>
+  <div class="mb-3 animate__animated animate__jackInTheBox">
+    <%= form.label :email %><br>
+    <%= form.text_field :email, class: "form-control" %>
+  </div>
+
+  <div class="mb-3 animate__animated animate__jackInTheBox"> 
+    <%= form.label :password %><br>
+    <%= form.password_field :password,class: "form-control" %>
+  </div>
+
+  <div class="mb-3 animate__animated animate__jackInTheBox">
+    <%= form.submit "Log In",class: "btn btn-primary"  %>
+  </div>
+
+  <div class="mb-3 animate__animated animate__jackInTheBox">
+  <%= link_to  "Back", root_path, class: "btn btn-primary " %>
+</div>
+
+<% end %>
+</div>
